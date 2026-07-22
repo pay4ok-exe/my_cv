@@ -1,0 +1,359 @@
+% Akim Ospan – CV
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Akim Ospan – CV},
+    pdfauthor={Akim Ospan},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure machine–readable PDF:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+% Layout tweaks:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{\color{gray}\textit{\small Akim Ospan – Page \thepage{} of \pageref*{LastPage}}}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{\begin{itemize}[topsep=0.10 cm,parsep=0.10 cm,partopsep=0pt,itemsep=0pt,leftmargin=0.4 cm + 10pt]}{\end{itemize}}
+\newenvironment{highlightsforbulletentries}{\begin{itemize}[topsep=0.10 cm,parsep=0.10 cm,partopsep=0pt,itemsep=0pt,leftmargin=10pt]}{\end{itemize}}
+\newenvironment{onecolentry}{\begin{adjustwidth}{0.2 cm + 0.00001 cm}{0.2 cm + 0.00001 cm}}{\end{adjustwidth}}
+\newenvironment{twocolentry}[2][]{\onecolentry\def\secondColumn{#2}\setcolumnwidth{\fill, 4.5 cm}\begin{paracol}{2}}{\switchcolumn \raggedleft \secondColumn\end{paracol}\endonecolentry}
+\newenvironment{header}{\setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}}{\par\kern\topsep}
+
+% External link tweak
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+\begin{document}
+\newcommand{\AND}{\unskip\cleaders\copy\ANDbox\hskip\wd\ANDbox\ignorespaces}
+\newsavebox\ANDbox
+\sbox\ANDbox{}
+
+\placelastupdatedtext
+
+% ===== Header =====
+\begin{header}
+    \textbf{\fontsize{24 pt}{24 pt}\selectfont Akim Ospan}
+
+    \vspace{0.3 cm}
+
+    \normalsize
+    \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Almaty, Kazakhstan}%
+    \kern 0.25 cm%
+    \AND
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{mailto:ospanakim05@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}ospanakim05@gmail.com}}%
+    \kern 0.25 cm%
+    \AND
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{tel:+7-771-562-43-42}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}+7 (771) 562 43 42}}%
+    \kern 0.25 cm%
+    \AND
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://github.com/pay4ok-exe}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}pay4ok-exe}}%
+    \kern 0.25 cm%
+    \AND
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://linkedin.com/in/pay4ok-exe}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}pay4ok-exe}}%
+\end{header}
+
+% ===== Professional Summary =====
+\section{Professional Summary}
+\begin{onecolentry}
+Software Engineer with experience building and maintaining production-grade web and mobile applications using React, Next.js, React Native, Firebase, and FastAPI. Strong focus on scalable system design, real-time applications, cloud-based backends, and automated testing with Playwright. Experienced in working in outstaffing and product teams, delivering complex solutions across fintech, real estate, retail, and marketplace domains.
+\end{onecolentry}
+
+
+
+% ===== Employment History =====
+\section{Employment History}
+
+% TOO TIZIM APP
+\begin{twocolentry}{\textit{Astana}\newline\textit{Sep 2025 – Present}}
+\textbf{Full-Stack / Mobile Developer}\\
+\textit{TOO TIZIM APP (Outstaffing)}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+\begin{highlights}
+    \item Working in an outstaffing model on multiple client projects across fintech, real estate, retail, and marketplace domains
+    \item Developed cross-platform applications (iOS, Android, Web) using React Native (Expo), React, and Next.js
+    \item Built and maintained Firebase-based backends using Firestore, Cloud Functions (Node.js \& Python), Authentication, and Storage
+    \item Implemented and maintained automated end-to-end testing using Playwright for web and mobile applications
+    \item Participated in large-scale system migrations and legacy modernization projects
+\end{highlights}
+\end{onecolentry}
+
+% IDOS GAMES INTERNSHIP
+\vspace{0.2 cm}
+\begin{twocolentry}{\textit{Remote / Astana}\newline\textit{Sep 2025 – Dec 2025}}
+\textbf{Frontend Developer Intern}\\
+\textit{IDOS GAMES}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+\begin{highlights}
+    \item Worked on a production web platform using Next.js, TypeScript, Prisma ORM, and PostgreSQL
+    \item Improved UI components, page layouts, and authentication validation flows
+    \item Refactored and expanded Playwright E2E test suite to improve reliability and coverage
+    \item Developed an AI-powered video generation platform with multi-model support (Sora, Veo)
+    \item Gained experience with sprint planning, code reviews, debugging, and production workflows
+\end{highlights}
+\end{onecolentry}
+
+
+% Freelance
+\vspace{0.2 cm}
+\begin{twocolentry}{\textit{Remote/Almaty}\newline\textit{June 2025 – Present}}
+\textbf{Freelance Full-Stack Developer}\\
+\textit{Multiple Clients}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+\begin{highlights}
+    \item Developed Weekly Perfect Q - Kazakhstan's first bilingual manga reading platform with 15+ microservices
+    \item Built Imperium Furniture Store with Next.js 14, featuring bilingual e-commerce functionality and admin panel
+    \item Created MNM FUTURE e-commerce platform for musical instruments
+    \item Implemented FastAPI backends with advanced user management, content moderation, and notification systems
+    \item Utilized AI tools (Cursor, Claude, ChatGPT) to accelerate development and improve code quality
+\end{highlights}
+\end{onecolentry}
+
+% TAS GROUP
+\vspace{0.2 cm}
+\begin{twocolentry}{\textit{Almaty}\newline\textit{Nov 2024 – June 2025}}
+\textbf{Software Developer (Part-time)}\\
+\textit{TAS GROUP}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+\begin{highlights}
+    \item Developed enterprise web applications using .NET Core, C\#, MSSQL, and React
+    \item Implemented monolithic architecture solutions for large-scale business applications
+    \item Applied SOLID principles and design patterns to create maintainable, scalable code
+\end{highlights}
+\end{onecolentry}
+
+% SDU Technopark – Data Analyst
+\vspace{0.2 cm}
+\begin{twocolentry}{\textit{Kaskelen}\newline\textit{Sept 2024 – Dec 2024}}
+\textbf{Data Analyst (Part-time)}\\
+\textit{SDU Technopark}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+\begin{highlights}
+    \item Built data dashboards for decision-making
+    \item Created data visualization solutions to track KPIs
+    \item Contributed to Shanyraq platform as Frontend Developer
+\end{highlights}
+\end{onecolentry}
+
+% SDU Technopark – Frontend Dev
+\vspace{0.2 cm}
+\vspace{0.2 cm}
+\begin{twocolentry}{\textit{Kaskelen}\newline\textit{Jan 2024 – Aug 2024}}
+\textbf{Frontend Developer}\\
+\textit{SDU Technopark}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+\begin{highlights}
+    \item Led development of Shanyraq platform for roommate matching
+    \item Integrated Mapbox API for location-based searches
+    \item Implemented responsive UI/UX with React
+\end{highlights}
+\end{onecolentry}
+
+% ===== Education =====
+\section{Education}
+
+\begin{twocolentry}{\textit{Sept 2022 – Present}}
+\textbf{SDU University}\\
+\textit{BSc in Information Systems}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+Current GPA: 3.37 / 4.00
+\end{onecolentry}
+
+\begin{twocolentry}{\textit{Sep 2024 – May 2025}}
+\textbf{nFactorial}\\
+\textit{Full-Stack (MERN) Course}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+Completed intensive program covering MongoDB, Express.js, React, and Node.js with hands-on project development.
+\end{onecolentry}
+
+
+\begin{twocolentry}{\textit{Sept 2021 – Jun 2022}}
+\textbf{125 High School}\\
+\textit{High School Diploma}
+\end{twocolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+UNT Score: 114
+\end{onecolentry}
+
+% ===== Major Projects =====
+\section{Major Projects}
+
+\begin{onecolentry}
+\textbf{ProvidWell – Full-Stack \& Mobile Developer}\\
+Enterprise real estate analytics and mortgage intelligence platform (Web, iOS).
+\begin{highlights}
+    \item Built cross-platform application using React Native (Expo) and Firebase backend
+    \item Developed Cloud Functions (Node.js \& Python) for analytics, PDF generation, and automation
+    \item Integrated MLS data, mortgage history, FRED economic data, and Google Maps
+    \item Created Playwright E2E tests covering core user flows
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Beksar – Mobile / Full-Stack Developer}\\
+Retail business management (Android, Web, Desktop).
+\begin{highlights}
+    \item Developed business management platform using React Native and Expo
+    \item Led migration from legacy Beksar system to new architecture (2+ years of data).
+    \item Built Playwright E2E testing framework using Page Object Model
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{InTech – Full-Stack Developer}\\
+Enterprise multi-project task management and collaboration system.
+\begin{highlights}
+    \item Designed multi-project Firebase architecture with cross-project task synchronization
+    \item Implemented role-based access control (Customer, Operator, Executor, Admin)
+    \item Built real-time Kanban boards using Firestore listeners
+    \item Automated PDF/Excel document generation and reporting pipelines
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Qaynar – Full-Stack Developer}\\
+Kazakhstan's first bilingual manga platform. Built with Next.js, TypeScript, FastAPI, PostgreSQL, scalable microservices architecture, user roles, moderation, notifications.
+\end{onecolentry}
+
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Additional Projects}
+\begin{highlights}
+    \item IDOS Games - Web-based gaming platform, built UI and logic for AI video creation (Sora, Veo).
+    \item Biolink - IOS application built with React Native and native iOS packaging
+    \item Sen Ushin - Web application to be book author, Nextjs Firebase
+    \item Shanyraq – Roommate and housing finder platform. Built with Next.js and Mapbox API.
+    \item MNM FUTURE – E-commerce for traditional Kazakh musical instruments. Built with React 19, Tailwind CSS, Framer Motion.
+\end{highlights}
+\end{onecolentry}
+
+% ===== Skills =====
+\section{Technical Skills}
+\begin{onecolentry}
+\textbf{Frontend:} React, Next.js, TypeScript, JavaScript, Redux Toolkit, HTML5, CSS3, Tailwind CSS, ShadCN UI-IO, React Hook Form, Framer Motion
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Backend:} Firebase (Cloud Functions), Python (FastAPI), Node.js, C\# (.NET Core), Java, REST APIs, Microservices, Authentication (JWT), WebSocket, cronjobs
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Mobile:} React Native, Expo, iOS, Android, PWA
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Databases:} PostgreSQL, MySQL, Firestore, MongoDB, MSSQL, Redis, ORM (SQLAlchemy, Prisma)
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{DevOps \& Tools:} Git, Docker, AWS, Vercel, GitHub Actions, Nginx, Linux (Red Hat), Swagger/OpenAPI
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Testing:} Playwright (E2E), QA Automation, Web \& Mobile Testing
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{AI Tools:} Cursor, Antigravity IDE, Claude AI, ChatGPT, GitHub Copilot, Prompt Engineering
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Data Analytics:} Python (Pandas, NumPy, Matplotlib), Data Visualization, Dashboards
+\end{onecolentry}
+\vspace{0.2 cm}
+\begin{onecolentry}
+\textbf{Networking:} Cisco NetAcad (CCNA), Enterprise Networking, Security, Automation
+\end{onecolentry}
+
+% % ===== Certificates =====
+% \section{Certificates}
+% \begin{onecolentry}
+% \begin{highlights}
+%     \item \textbf{nFactorial School – Silver Certificate of Achievement} (Fullstack, 24-week program) \href{https://drive.google.com/file/d/1R1d6elqQDNBxGpF5SEaWG-8QW9kE5qdK/view?usp=sharing}{View}
+%     \item \textbf{Tech Orda Program – Certificate of Completion} \href{https://drive.google.com/file/d/1cPfjk6FeTbDY5W1g43lVmaoA7wGEytSm/view?usp=sharing}{View}
+%     \item \textbf{Cisco Networking Academy – CCNAv7: Enterprise Networking, Security, Automation} \href{https://drive.google.com/file/d/1ayGSXVAq8mc6T02-B5oRFnE82uchzIVX/view?usp=sharing}{View}
+%     \item \textbf{MBA Essentials – University of Glasgow (Coursera)} \href{https://drive.google.com/file/d/1Dn1KM-nB7m3FL9vTDHaTvYkXiisv2L0C/view?usp=sharing}{View}
+%     \item \textbf{Effective Marketing in the Global Marketplace – Coursera} \href{https://drive.google.com/file/d/1yw3bbZHpUIyJoPi4FSKNnymiZPhb4tqM/view?usp=sharing}{View}
+%     \item \textbf{Red Hat Training – Red Hat System Administration I (RH124)} \href{https://drive.google.com/file/d/1UXHxOc_ILzm0NiAdGLv9j9XBVHfNryz2/view?usp=sharing}{View}
+%     \item \textbf{Red Hat Training – Red Hat System Administration II (RH134)} \href{https://drive.google.com/file/d/1txZVjG-kul7Lo-8Ae-qOZya3haau9mNe/view?usp=sharing}{View}
+% \end{highlights}
+% \end{onecolentry}
+
+% ===== Languages =====
+\section{Languages}
+\begin{onecolentry}
+English – B2 \;\; Kazakh – C1 \;\; Russian – B2 \;\;  Turkish – A2  \;\;  Uzbek – A2 \\
+\end{onecolentry}
+
+\end{document}
